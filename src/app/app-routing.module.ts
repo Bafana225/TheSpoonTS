@@ -3,10 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 
-
 const routes: Routes = [
-{ path: 'add-restaurant', component: AddRestaurantComponent },
-{ path: 'restaurants', component: RestaurantsComponent },
+  { path: 'add-restaurant', component: AddRestaurantComponent },
+  { path: 'restaurants', component: RestaurantsComponent },
+  { path: '', redirectTo: '/restaurants', pathMatch: 'full' }
 ];
 
 @NgModule({
