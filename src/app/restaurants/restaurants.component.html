@@ -1,1 +1,28 @@
-<p>restaurants works!</p>
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Nombre de couverts</th>
+          <th>Accessibilité PMR</th>
+          <th>Prix moyen</th>
+        </tr>
+        <tbody *ngFor="let restaurant of restaurants">
+          <tr>
+            <td>{{restaurant.id}}</td>
+            <td>{{restaurant.nom}}</td>
+            <td>{{restaurant.adresse}}</td>
+            <td>{{restaurant.nbCouverts}}</td>
+            <td>{{restaurant.accessibilitePmr}}</td>
+            <td>{{restaurant.prixMoyen}}</td>
+            <td class="btn btn-danger" (click)="supprimerRestaurant(restaurant)">Supprimer</td>
+            <td class="btn btn-success" [routerLink]="['/update-restaurant',restaurant.id]">Modifier</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
