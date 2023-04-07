@@ -7,12 +7,14 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UpdateRestaurantComponent } from './update-restaurant/update-restaurant.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
-    AddRestaurantComponent
+    AddRestaurantComponent,
+    UpdateRestaurantComponent
   ],
   imports: [
     BrowserModule,

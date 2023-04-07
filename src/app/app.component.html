@@ -5,20 +5,26 @@
   <meta charset="utf-8">
   <title>Gestion des Produits</title>
 </head>
-
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-custom">
     <!-- Brand -->
     <a class="navbar-brand" href="#">The Spoon</a>
+  
     <!-- Links -->
     <ul class="navbar-nav">
       <!-- Dropdown -->
       <li class="nav-item dropdown">
-        <a class="nav-link" routerLink="/restaurants" id="navbardrop" data-toggle="dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
           Restaurants
         </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/add-restaurant" routerLinkActive="active">Ajouter</a>
+          <a class="dropdown-item" routerLink="/restaurants" routerLinkActive="active">Lister</a>
+        </div>
       </li>
     </ul>
+  
+    <!-- Right-aligned links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -31,7 +37,7 @@
         </div>
       </li>
     </ul>
-  </nav>
+  </nav>  
 </body>
 
 </html>
