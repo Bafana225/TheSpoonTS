@@ -7,7 +7,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 const routes: Routes = [
   { path: 'add-restaurant', component: AddRestaurantComponent },
   { path: 'restaurants', component: RestaurantsComponent },
-  { path: 'update-restaurant', component: UpdateRestaurantComponent },
+  { path: 'update-restaurant/:id', component: UpdateRestaurantComponent },
   { path: '', redirectTo: 'restaurants', pathMatch: 'full' }
 ];
 

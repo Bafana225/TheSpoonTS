@@ -19,6 +19,7 @@
       <label for="prixMoyen">Prix moyen :</label>
       <input type="number" class="form-control" id="prixMoyen" [(ngModel)]="currentRestaurant.prixMoyen" name="prixMoyen">
     </div>
-    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+    <button type="submit" class="btn btn-primary" (click)="updateRestaurant()">Mettre à jour</button>
+
   </form>
   
