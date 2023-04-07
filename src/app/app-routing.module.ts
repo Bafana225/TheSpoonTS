@@ -6,7 +6,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 const routes: Routes = [
   { path: 'add-restaurant', component: AddRestaurantComponent },
   { path: 'restaurants', component: RestaurantsComponent },
-  { path: '', redirectTo: '/restaurants', pathMatch: 'full' }
+  { path: '', redirectTo: 'restaurants', pathMatch: 'full' }
 ];
 
 @NgModule({

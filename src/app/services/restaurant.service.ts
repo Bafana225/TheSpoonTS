@@ -13,7 +13,7 @@ const httpOptions = {
 })
 
 export class RestaurantService {
-    apiURL: string = 'http://localhost:8080/restaurants/api';
+    apiURL: string = 'http://localhost:8080/theSpoon/restaurants-api';
     restaurants!: Restaurant[];
 
   constructor(private http : HttpClient) { }

@@ -30,7 +30,7 @@ export class RestaurantsComponent implements OnInit {
 
   supprimerRestaurant(r: Restaurant) {
     console.log(r.id);
-    let conf = confirm("Etes-vous sûr ?");
+    let conf = confirm("Confirmer?");
     if (conf)
       this.restaurantService.supprimerRestaurant(r.id).subscribe(() => {
         console.log("restaurant supprimé");
