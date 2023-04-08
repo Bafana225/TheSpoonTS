@@ -5,38 +5,37 @@ import { RestaurantService } from '../services/restaurant.service';
 
 @Component({
   selector: 'app-restaurants',
-  templateUrl: './restaurants.component.html',
-  styleUrls: ['./restaurants.component.scss']
+  templateUrl: './restaurants.component.html'
 })
-
 export class RestaurantsComponent implements OnInit {
-
   restaurants?: Restaurant[];
 
-  constructor(private restaurantService: RestaurantService,
-    private router : Router) {
-  }
+
+
+  constructor(
+    private restaurantService: RestaurantService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-
     this.chargerRestaurants();
   }
 
-  chargerRestaurants() {
+  chargerRestaurants(): void {
     this.restaurantService.listeRestaurant().subscribe(restaurants => {
       console.log(restaurants);
       this.restaurants = restaurants;
     });
   }
 
-  supprimerRestaurant(r: Restaurant) {
+  supprimerRestaurant(r: Restaurant): void {
     console.log(r.id);
     let conf = confirm("Confirmer?");
-    if (conf)
+    if (conf) {
       this.restaurantService.supprimerRestaurant(r.id).subscribe(() => {
         console.log("restaurant supprimé");
         this.chargerRestaurants();
       });
+    }
   }
-
 }
