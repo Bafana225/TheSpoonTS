@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateRestaurantComponent } from './update-restaurant/update-restaurant.component';
 import { HomeComponent } from './home/home.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/home.component';
     RestaurantsComponent,
     AddRestaurantComponent,
     UpdateRestaurantComponent,
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
