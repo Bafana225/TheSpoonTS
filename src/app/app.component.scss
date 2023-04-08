@@ -1,0 +1,17 @@
+.navbar{
+    height: 130px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    margin-bottom: 5%;
+    a{
+        color: #333; /* ou une autre nuance de gris foncé */
+        font-weight: bold;
+    }
+  }
+  
+.navbar-nav-item{
+    display: flex;
+    width: 350px;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+  }

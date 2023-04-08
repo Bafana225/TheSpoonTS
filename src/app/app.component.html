@@ -6,12 +6,16 @@
   <title>Gestion des Produits</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-custom">
+  <nav class="navbar">
     <!-- Brand -->
-    <a class="navbar-brand" href="#">The Spoon</a>
-  
+    <a class="navbar-brand" href="#">
+      <img  class="navbar-brand" src="./assets/logo-the-spoon.png" alt="The Spoon logo">
+    </a>
     <!-- Links -->
-    <ul class="navbar-nav">
+    <ul class="navbar-nav-item">
+      <li>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+      </li>
       <!-- Dropdown -->
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -22,13 +26,16 @@
           <a class="dropdown-item" routerLink="/restaurants" routerLinkActive="active">Lister</a>
         </div>
       </li>
+      <li>
+        <a routerLink="/restaurants" routerLinkActive="active"> Réservations</a>
+      </li>
     </ul>
   
     <!-- Right-aligned links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          [username]
+          LOGIN
         </a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">login</a>

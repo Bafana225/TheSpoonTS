@@ -8,13 +8,15 @@ import { AddRestaurantComponent } from './add-restaurant/add-restaurant.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateRestaurantComponent } from './update-restaurant/update-restaurant.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantsComponent,
     AddRestaurantComponent,
-    UpdateRestaurantComponent
+    UpdateRestaurantComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
