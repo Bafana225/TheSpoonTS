@@ -15,7 +15,7 @@
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let restaurant of restaurants">
       <div class="card h-100">
-        <img [src]="restaurant.imageUrl" class="card-img-top" alt="{{restaurant.nom}}">
+        <a href=""><img src="{{restaurant.imageUrl}}" alt="" class="imgUrl"/></a>
         <div class="card-body">
           <h5 class="card-title">{{restaurant.nom}}</h5>
           <p class="card-text"><i class="bi bi-geo-alt-fill"></i> {{restaurant.adresse}}</p>
