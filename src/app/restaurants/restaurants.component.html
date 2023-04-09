@@ -1,6 +1,16 @@
-<li class="nav-item active">
-  <button class="nav-link" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
-</li>
+<nav class="nav-restaurant">
+  <form class="search">
+    <input class="place-holder" type="search" placeholder="Recherche par nom" aria-label="Rechercher">
+    <button class="btn-form-inline" type="submit">Rechercher</button>
+  </form>
+  <ul class="navbar-nav">
+    <li class="btn-add-restaurant">
+      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
+    </li>
+  </ul>
+</nav>
+
+
 
 <div class="container">
   <div class="row">
@@ -14,8 +24,11 @@
           <p class="card-text"><i class="bi bi-wheelchair"></i> {{restaurant.accessibilitePmr ? 'Accessible PMR' : 'Non accessible PMR'}}</p>
           <p class="card-text"><i class="bi bi-currency-euro"></i> Prix moyen : {{restaurant.prixMoyen}}€</p>
           <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-danger mx-2" (click)="supprimerRestaurant(restaurant)"><i class="bi bi-trash-fill"></i></a>
-              <a [routerLink]="['/update-restaurant', restaurant.id]" class="btn btn-success mx-2"><i class="bi bi-pencil-fill"></i></a>  
+            <a href="#" class="btn btn-danger mx-2" (click)="supprimerRestaurant(restaurant)">
+              <i class="bi bi-trash-fill"></i>
+            </a>
+            
+            <a [routerLink]="['/update-restaurant', restaurant.id]" class="btn btn-success mx-2"><i class="bi bi-pencil-fill"></i></a> 
           </div>
         </div>
       </div>
@@ -78,24 +91,24 @@
       <div class="modal-body">
         <form #editForm="ngForm">
           <div class="form-group">
-            <label for="name">Nom</label>
-            <input type="text" ngModel="{{editRestaurant?.nom}}" name="nom" class="form-control" id="nom" placeholder="Nom" required />
+            <label for="nom">Nom</label>
+            <input type="text" [(ngModel)]="editRestaurant.nom" name="nom" class="form-control" id="nom" placeholder="Nom" required />
           </div>
-
-          <input type="hidden" ngModel="{{editRestaurant?.id}}" name="id" class="form-control" id="id" placeholder="Id" />
-          <input type="hidden" ngModel="{{editRestaurant?.adresse}}" name="adresse" class="form-control" id="adresse" placeholder="Adresse" />
-
+      
+          <input type="hidden" [(ngModel)]="editRestaurant.id" name="id" class="form-control" id="id" placeholder="Id" />
+          <input type="hidden" [(ngModel)]="editRestaurant.adresse" name="adresse" class="form-control" id="adresse" placeholder="Adresse" />
+      
           <div class="form-group">
-            <label for="email">Type de cuisine</label>
-            <input type="text" ngModel="{{editRestaurant?.typeCuisine}}" name="typeCuisine" class="form-control" id="typeCuisine" placeholder="Type de cuisine" required />
+            <label for="nbCouverts">Nombre de couverts</label>
+            <input type="number" [(ngModel)]="editRestaurant.nbCouverts" name="nbCouverts" class="form-control" id="nbCouverts" placeholder="Nombre de couverts" required />
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" [(ngModel)]="editRestaurant.accessibilitePmr" name="accessibilitePmr" class="form-check-input" id="accessibilitePmr" />
+            <label class="form-check-label" for="accessibilitePmr">Accessibilité PMR</label>
           </div>
           <div class="form-group">
-            <label for="phone">Note</label>
-            <input type="number" ngModel="{{editRestaurant?.note}}" name="note" class="form-control" id="note" placeholder="Note" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Image URL</label>
-            <input type="text" ngModel="{{editRestaurant?.imageURL}}" name="imageURL" class="form-control" id="imageURL" placeholder="Image URL" required />
+            <label for="prixMoyen">Prix moyen</label>
+            <input type="number" [(ngModel)]="editRestaurant.prixMoyen" name="prixMoyen" class="form-control" id="prixMoyen" placeholder="Prix moyen" required />
           </div>
           <div class="modal-footer">
             <button type="button" id="add-restaurant-form" class="btn btn-secondary" data-dismiss="modal">
@@ -106,7 +119,7 @@
             </button>
           </div>
         </form>
-      </div>
+      </div>     
     </div>
   </div>
 </div>    

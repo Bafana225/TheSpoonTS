@@ -7,11 +7,22 @@ import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-restaurants',
-  templateUrl: './restaurants.component.html'
+  templateUrl: './restaurants.component.html',
+  styleUrls: ['./restaurants.component.scss'] // Chemin du fichier CSS
 })
+
 export class RestaurantsComponent implements OnInit {
   restaurants?: Restaurant[];
-  public editRestaurant: Restaurant | undefined;
+
+  public editRestaurant: Restaurant = {
+    id: 0,
+    nom: '',
+    adresse: '',
+    nbCouverts: 0,
+    accessibilitePmr: false,
+    prixMoyen: 0
+  };
+
   public deleteRestaurant: Restaurant | undefined;
 
 
@@ -24,21 +35,42 @@ export class RestaurantsComponent implements OnInit {
   ngOnInit(): void {
     this.chargerRestaurants();
   }
+  
+  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'modal');
+    if (mode === 'add') {
+      button.setAttribute('data-target', '#addRestaurantModal');
+    }
+    if (mode === 'edit'){
+      this.editRestaurant = restaurant;
+      button.setAttribute('data-target', '#updateRestaurantModal');
+    }
+    if (mode === 'delete') {
+      this.deleteRestaurant = restaurant;
+      button.setAttribute('data-target', '#deleteRestaurantModal');
+    }
+    document.body.appendChild(button);
+    button.click();
+  }
 
-  chargerRestaurants(): void {
+  public chargerRestaurants(): void {
     this.restaurantService.listeRestaurant().subscribe(restaurants => {
       console.log(restaurants);
       this.restaurants = restaurants;
     });
   }
 
-  supprimerRestaurant(r: Restaurant): void {
+  public supprimerRestaurant(r: Restaurant): void {
     console.log(r.id);
     let conf = confirm("Confirmer?");
     if (conf) {
       this.restaurantService.supprimerRestaurant(r.id).subscribe(() => {
-        console.log("restaurant supprimé");
+        alert("restaurant supprimé");
         this.chargerRestaurants();
+        this.router.navigate(['/restaurants']); // Rediriger vers la page des restaurants
       });
     }
   }
@@ -69,26 +101,17 @@ export class RestaurantsComponent implements OnInit {
         }
       );
     }
-    
 
-  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.style.display = 'none';
-    button.setAttribute('data-toggle', 'modal');
-    if (mode === 'add') {
-      button.setAttribute('data-target', '#addRestaurantModal');
+    public onDeleteRestaurant(restaurantId: number): void {
+      this.restaurantService.supprimerRestaurant(restaurantId).subscribe(
+        () => {
+          console.log('Le restaurant a été supprimé');
+          this.chargerRestaurants();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      );
     }
-    if (mode === 'edit'){
-      this.editRestaurant = restaurant;
-      button.setAttribute('data-target', '#updateJoueurModal');
-    }
-    if (mode === 'delete') {
-      this.deleteRestaurant = restaurant;
-      button.setAttribute('data-target', '#deleteRestaurantModal');
-    }
-    document.body.appendChild(button);
-    button.click();
-  }
 
 }

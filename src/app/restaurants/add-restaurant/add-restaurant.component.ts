@@ -17,12 +17,12 @@ export class AddRestaurantComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*addRestaurant(){
+  addRestaurant(){
     this.restaurantService.ajouterRestaurant(this.newRestaurant)
     .subscribe(res => {
       console.log(res);
       this.router.navigate(['restaurants']); // Rediriger vers la liste des restaurants
     });
-  }*/
+  }
 
 }
