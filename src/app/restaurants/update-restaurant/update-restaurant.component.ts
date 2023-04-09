@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Restaurant } from '../models/restaurant.model';
-import { RestaurantService } from '../services/restaurant.service';
+import { Restaurant } from '../../models/restaurant.model';
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-update-restaurant',

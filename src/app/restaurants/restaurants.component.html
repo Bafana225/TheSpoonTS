@@ -1,3 +1,7 @@
+<li class="nav-item active">
+  <button class="nav-link" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
+</li>
+
 <div class="container">
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let restaurant of restaurants">
@@ -19,5 +23,92 @@
   </div>
 </div>
 
+<!-- MODAL D'AJOUT DE RESTAURANT -->
+<div class="modal fade" id="addRestaurantModal" tabindex="-1" role="dialog" aria-labelledby="addRestaurantModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRestaurantModalLabel">Ajouter un restaurant</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddRestaurant(addForm)">
+          <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" ngModel name="nom" class="form-control" id="nom" placeholder="Nom" required>
+          </div>
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input type="text" ngModel name="adresse" class="form-control" id="adresse" placeholder="Adresse" required>
+          </div>
+          <div class="form-group">
+            <label for="nbCouverts">Nombre de couverts</label>
+            <input type="number" ngModel name="nbCouverts" class="form-control" id="nbCouverts" placeholder="Nombre de couverts" required>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" ngModel name="accessibilitePmr" class="form-check-input" id="accessibilitePmr">
+            <label class="form-check-label" for="accessibilitePmr">Accessibilité PMR</label>
+          </div>
+          <div class="form-group">
+            <label for="prixMoyen">Prix moyen</label>
+            <input type="number" ngModel name="prixMoyen" class="form-control" id="prixMoyen" placeholder="Prix moyen" required>
+          </div>
+          <div class="modal-footer">
+            <button [disabled]="addForm.invalid" class="btn btn-primary">Sauvegarder les changements</button>
+            <button type="button" id="add-restaurant-form" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+<!-- MODAL D'EDITION DE RESTAURANT -->
+<div class="modal fade" id="updateRestaurantModal" tabindex="-1" role="dialog" aria-labelledby="updateRestaurantModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="restaurantEditModalLabel">
+          Editer ce restaurant
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editForm="ngForm">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" ngModel="{{editRestaurant?.nom}}" name="nom" class="form-control" id="nom" placeholder="Nom" required />
+          </div>
+
+          <input type="hidden" ngModel="{{editRestaurant?.id}}" name="id" class="form-control" id="id" placeholder="Id" />
+          <input type="hidden" ngModel="{{editRestaurant?.adresse}}" name="adresse" class="form-control" id="adresse" placeholder="Adresse" />
+
+          <div class="form-group">
+            <label for="email">Type de cuisine</label>
+            <input type="text" ngModel="{{editRestaurant?.typeCuisine}}" name="typeCuisine" class="form-control" id="typeCuisine" placeholder="Type de cuisine" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Note</label>
+            <input type="number" ngModel="{{editRestaurant?.note}}" name="note" class="form-control" id="note" placeholder="Note" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Image URL</label>
+            <input type="text" ngModel="{{editRestaurant?.imageURL}}" name="imageURL" class="form-control" id="imageURL" placeholder="Image URL" required />
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-restaurant-form" class="btn btn-secondary" data-dismiss="modal">
+              Fermer
+            </button>
+            <button (click)="onUpdateRestaurant(editForm.value)" data-dismiss="modal" class="btn btn-primary">
+              Sauvegarder les changements
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>    
 
 
