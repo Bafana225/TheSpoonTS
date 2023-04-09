@@ -1,3 +1,4 @@
+<!-- NAVIGATION CONTEXTUELLE RESTAURANT -->
 <nav class="nav-restaurant">
   <form class="search">
     <input class="place-holder" type="search" placeholder="Recherche par nom" aria-label="Rechercher">
@@ -5,13 +6,11 @@
   </form>
   <ul class="navbar-nav">
     <li class="btn-add-restaurant">
-      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
+      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', imageUrl:'', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
     </li>
   </ul>
 </nav>
-
-
-
+<!-- MAIN - LISTE DES RESTAURANTS -->
 <div class="container">
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let restaurant of restaurants">
@@ -26,8 +25,7 @@
           <div class="d-flex justify-content-center">
             <a href="#" class="btn btn-danger mx-2" (click)="supprimerRestaurant(restaurant)">
               <i class="bi bi-trash-fill"></i>
-            </a>
-            
+            </a>      
             <a [routerLink]="['/update-restaurant', restaurant.id]" class="btn btn-success mx-2"><i class="bi bi-pencil-fill"></i></a> 
           </div>
         </div>
@@ -35,7 +33,6 @@
     </div>
   </div>
 </div>
-
 <!-- MODAL D'AJOUT DE RESTAURANT -->
 <div class="modal fade" id="addRestaurantModal" tabindex="-1" role="dialog" aria-labelledby="addRestaurantModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -75,53 +72,6 @@
         </form>
       </div>
     </div>
-    
-<!-- MODAL D'EDITION DE RESTAURANT -->
-<div class="modal fade" id="updateRestaurantModal" tabindex="-1" role="dialog" aria-labelledby="updateRestaurantModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="restaurantEditModalLabel">
-          Editer ce restaurant
-        </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form #editForm="ngForm">
-          <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" [(ngModel)]="editRestaurant.nom" name="nom" class="form-control" id="nom" placeholder="Nom" required />
-          </div>
-      
-          <input type="hidden" [(ngModel)]="editRestaurant.id" name="id" class="form-control" id="id" placeholder="Id" />
-          <input type="hidden" [(ngModel)]="editRestaurant.adresse" name="adresse" class="form-control" id="adresse" placeholder="Adresse" />
-      
-          <div class="form-group">
-            <label for="nbCouverts">Nombre de couverts</label>
-            <input type="number" [(ngModel)]="editRestaurant.nbCouverts" name="nbCouverts" class="form-control" id="nbCouverts" placeholder="Nombre de couverts" required />
-          </div>
-          <div class="form-group form-check">
-            <input type="checkbox" [(ngModel)]="editRestaurant.accessibilitePmr" name="accessibilitePmr" class="form-check-input" id="accessibilitePmr" />
-            <label class="form-check-label" for="accessibilitePmr">Accessibilité PMR</label>
-          </div>
-          <div class="form-group">
-            <label for="prixMoyen">Prix moyen</label>
-            <input type="number" [(ngModel)]="editRestaurant.prixMoyen" name="prixMoyen" class="form-control" id="prixMoyen" placeholder="Prix moyen" required />
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="add-restaurant-form" class="btn btn-secondary" data-dismiss="modal">
-              Fermer
-            </button>
-            <button (click)="onUpdateRestaurant(editForm.value)" data-dismiss="modal" class="btn btn-primary">
-              Sauvegarder les changements
-            </button>
-          </div>
-        </form>
-      </div>     
-    </div>
   </div>
-</div>    
-
+</div>
 
