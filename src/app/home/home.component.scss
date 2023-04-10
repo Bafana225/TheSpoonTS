@@ -1,17 +1,23 @@
 .illustrationHeader{
-    border: 1px solid rgb(234, 234, 234);
+    /* border: 1px solid rgb(234, 234, 234); */
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    background-image: url("../assets/cook.png");
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.9);
 }
-
+h2{
+    font-size: 40px;
+    width: 400px;
+    margin-bottom: 3%;
+}
 .header{
     padding-top: 3%;
     padding-bottom: 3%;
+    background-color: rgb(255, 250, 242);
 }
 
 .btnOrangeRecherche{
