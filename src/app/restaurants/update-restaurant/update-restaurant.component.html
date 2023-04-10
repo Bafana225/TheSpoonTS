@@ -1,29 +1,29 @@
-<form>
-    <div class="form-group">
-      <label for="nom">Nom :</label>
-      <input type="text" class="form-control" id="nom" [(ngModel)]="currentRestaurant.nom" name="nom">
-    </div>
-    <div class="form-group">
-      <label for="imageUrl">Url de l'image :</label>
-      <input type="text" class="form-control" id="imageUrl" [(ngModel)]="currentRestaurant.imageUrl" name="imageUrl">
-    </div>
-    <div class="form-group">
-      <label for="adresse">Adresse :</label>
-      <input type="text" class="form-control" id="adresse" [(ngModel)]="currentRestaurant.adresse" name="adresse">
-    </div>
-    <div class="form-group">
-      <label for="nbCouverts">Nombre de couverts :</label>
-      <input type="number" class="form-control" id="nbCouverts" [(ngModel)]="currentRestaurant.nbCouverts" name="nbCouverts">
-    </div>
-    <div class="form-group">
-      <label for="accessibilitePmr">Accessibilité PMR :</label>
-      <input type="checkbox" class="form-check-input" id="accessibilitePmr" [(ngModel)]="currentRestaurant.accessibilitePmr" name="accessibilitePmr">
-    </div>
-    <div class="form-group">
-      <label for="prixMoyen">Prix moyen :</label>
-      <input type="number" class="form-control" id="prixMoyen" [(ngModel)]="currentRestaurant.prixMoyen" name="prixMoyen">
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="updateRestaurant()">Mettre à jour</button>
-
-  </form>
-  
+<form class="mx-auto" style="width: 80%; margin-top: 3%; margin-bottom: 6%;">
+  <div class="form-group">
+    <label for="nom">Nom :</label>
+    <input type="text" class="form-control" id="nom" [(ngModel)]="currentRestaurant.nom" name="nom">
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">Url de l'image :</label>
+    <input type="text" class="form-control" id="imageUrl" [(ngModel)]="currentRestaurant.imageUrl" name="imageUrl">
+  </div>
+  <div class="form-group">
+    <label for="adresse">Adresse :</label>
+    <input type="text" class="form-control" id="adresse" [(ngModel)]="currentRestaurant.adresse" name="adresse">
+  </div>
+  <div class="form-group">
+    <label for="nbCouverts">Nombre de couverts :</label>
+    <input type="number" class="form-control" id="nbCouverts" [(ngModel)]="currentRestaurant.nbCouverts"
+      name="nbCouverts">
+  </div>
+  <div class="form-group">
+    <label for="accessibilitePmr">Accessibilité PMR :</label>
+    <input type="checkbox" style="margin-left: 5px;" class="form-check-input" id="accessibilitePmr"
+      [(ngModel)]="currentRestaurant.accessibilitePmr" name="accessibilitePmr">
+  </div>
+  <div class="form-group">
+    <label for="prixMoyen">Prix moyen :</label>
+    <input type="number" class="form-control" id="prixMoyen" [(ngModel)]="currentRestaurant.prixMoyen" name="prixMoyen">
+  </div>
+  <button type="submit" class="btn btn-primary btn-orange" (click)="updateRestaurant()">Mettre à jour</button>
+</form>

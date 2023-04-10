@@ -14,19 +14,6 @@ import { NgForm } from '@angular/forms';
 export class RestaurantsComponent implements OnInit {
   restaurants?: Restaurant[];
 
-  public editRestaurant: Restaurant = {
-    id: 0,
-    nom: '',
-    adresse: '',
-    nbCouverts: 0,
-    accessibilitePmr: false,
-    prixMoyen: 0
-  };
-
-  public deleteRestaurant: Restaurant | undefined;
-
-
-
   constructor(
     private restaurantService: RestaurantService,
     private router: Router
@@ -36,21 +23,13 @@ export class RestaurantsComponent implements OnInit {
     this.chargerRestaurants();
   }
   
-  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
+  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', imageUrl:'', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-toggle', 'modal');
     if (mode === 'add') {
       button.setAttribute('data-target', '#addRestaurantModal');
-    }
-    if (mode === 'edit'){
-      this.editRestaurant = restaurant;
-      button.setAttribute('data-target', '#updateRestaurantModal');
-    }
-    if (mode === 'delete') {
-      this.deleteRestaurant = restaurant;
-      button.setAttribute('data-target', '#deleteRestaurantModal');
     }
     document.body.appendChild(button);
     button.click();

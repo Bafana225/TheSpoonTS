@@ -6,8 +6,10 @@ import { RestaurantService } from '../../services/restaurant.service';
 @Component({
   selector: 'app-update-restaurant',
   templateUrl: './update-restaurant.component.html',
-  styles: []
+  styleUrls: ['./update-restaurant.component.scss']
 })
+
+
 export class UpdateRestaurantComponent implements OnInit {
 
   currentRestaurant = new Restaurant();
