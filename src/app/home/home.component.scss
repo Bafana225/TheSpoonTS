@@ -1,8 +1,12 @@
-.adef{border: 1px solid rgb(234, 234, 234);
+.illustrationHeader{
+    border: 1px solid rgb(234, 234, 234);
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    background-image: url("../assets/cook.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .header{
