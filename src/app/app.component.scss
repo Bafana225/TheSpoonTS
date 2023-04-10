@@ -1,61 +1,68 @@
-.navbar{
-    height: 130px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+///NAVIGATION
+.navbar {
+  height: 130px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
 
-    a{
-        color: #333; /* ou une autre nuance de gris foncé */
-        font-weight: bold;
-    }
+  a {
+    color: #333;
+    font-weight: bold;
   }
-  
-.navbar-nav-item{
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-    list-style: none;
-    align-items: center;
-    margin-left: 20%;
-  }
+}
 
-  .footer {
-    background-color: #ffffff;
-    color: #616161;
-    padding-left: 5px;
-    padding-top: 15px;
-    box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
-  }
+//logo
+.navbar-brand{
+  width: 250px;
+}
 
-    .sub-footer{
-      border-top: 1px solid rgb(192, 192, 192);
-      margin-top: 1%;
-    }
-    
-    .footer-logo {
-    height: 50px;
-    }
-    
-    .footer-nav {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    }
-    
-    .footer-nav li {
-    margin-left: 20px;
-    }
-    
-    .footer-nav li:first-child {
-    margin-left: 0;
-    }
-    
-    .footer-nav a {
-    color: #626262;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    }
-    
-    .footer-nav a:hover {
-    color: #bb5124;
-    }
+.navbar-nav-item {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  list-style: none;
+  align-items: center;
+  margin-left: 20%;
+}
+///FOOTER///
+.footer {
+  background-color: #ffffff;
+  color: #616161;
+  padding-left: 5px;
+  padding-top: 15px;
+  box-shadow: 0px -1px 4px rgba(0, 0, 0, 0.25);
+}
+.footer-logo {
+  width: 125px;
+}
+.footer-nav {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav li {
+  margin-left: 20px;
+}
+
+.footer-nav li:first-child {
+  margin-left: 0;
+}
+
+.footer-nav a {
+  color: #626262;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #bb5124;
+}
+///Sous footer
+.sub-footer {
+  border-top: 1px solid rgb(192, 192, 192);
+  margin-top: 1%;
+}
+
+
+
