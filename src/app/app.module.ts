@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UpdateRestaurantComponent } from './restaurants/update-restaurant/update-restaurant.component';
 import { HomeComponent } from './home/home.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
     RestaurantsComponent,
     AddRestaurantComponent,
     UpdateRestaurantComponent,
-    HomeComponent
+    HomeComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,
