@@ -22,7 +22,7 @@ export class RestaurantsComponent implements OnInit {
   ngOnInit(): void {
     this.chargerRestaurants();
   }
-  
+
   onOpenModal(restaurant: Restaurant = {id: 1, nom: '', imageUrl:'', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
     const button = document.createElement('button');
     button.type = 'button';
