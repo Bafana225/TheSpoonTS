@@ -23,7 +23,7 @@ ngOnInit(): void {
 this.loadReservations();
 }
 
-onOpenModal(reservation: Reservation = {id: 1, nbAdultes: 0, nbEnfants: 0, restaurant: {id: 0, nom: '', imageUrl: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, horaires: {id: 0, date: '', heure: ''}} , mode: string): void {
+onOpenModal(reservation: Reservation = {id: 1, nbAdultes: 0, nbEnfants: 0, restaurantId: 0, horairesId: 0} , mode: string): void {
   const button = document.createElement('button');
   button.type = 'button';
   button.style.display = 'none';
@@ -34,6 +34,7 @@ onOpenModal(reservation: Reservation = {id: 1, nbAdultes: 0, nbEnfants: 0, resta
   document.body.appendChild(button);
   button.click();
 }
+
 
 
 public loadReservations(): void {
