@@ -26,13 +26,19 @@ export class UpdateReservationComponent implements OnInit {
         this.currentReservation = reservation;
         // Récupération des restaurants et horaires pour les listes déroulantes
         this.reservationService.getRestaurants().subscribe(
-          (restaurants) => this.restaurants = restaurants
+          (restaurants) => {
+            this.restaurants = restaurants;
+            // Trouver le restaurant associé à la réservation
+            this.currentReservation.restaurant = this.restaurants.find(r => r.id === this.currentReservation.restaurant.id);
+          }
         );
         this.reservationService.getHoraires().subscribe(
           (horaires) => this.horaires = horaires
         );
       });
   }
+
+
 
   updateReservation() {
     this.reservationService.updateReservation(this.currentReservation).subscribe(reservation => {
