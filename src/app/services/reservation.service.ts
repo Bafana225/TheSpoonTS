@@ -48,3 +48,4 @@ updateReservation(res: Reservation): Observable<Reservation> {
   return this.http.put<Reservation>(url, res, httpOptions);
 }
 
+}
