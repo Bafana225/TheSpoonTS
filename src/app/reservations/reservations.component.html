@@ -6,7 +6,7 @@
   </form>
   <ul class="navbar-nav">
     <li class="btn-add-reservation">
-      <!--<button class="btn-search" (click)="onOpenModal({id: 1, nbAdultes: 0, nbEnfants: 0, restaurant: null, horaires: null}, 'add')">Ajouter une réservation <span class="sr-only">(current)</span></button>-->
+      <button class="btn-search" (click)="onOpenModal({id: 0, nbrAdultes: 1, nbrEnfants: 0, restaurant: {id: 0, nom: '', adresse: '', nbrPlaces: 0, accessibilitePmr: false, prixMoyen: 0}, heureReservation: {id: 0, horaire: '', reservations: []}}, 'add')">Ajouter une réservation <span class="sr-only">(current)</span></button>
     </li>
   </ul>
 </nav>
@@ -27,6 +27,49 @@
             <a [routerLink]="['/update-reservation', reservation.id]" class="btn btn-success mx-2"><i class="bi bi-pencil-fill"></i></a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL D'AJOUT DE RESERVATION -->
+<div class="modal fade" id="addReservationModal" tabindex="-1" role="dialog" aria-labelledby="addReservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addReservationModalLabel">Ajouter une réservation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onAddReservation(addForm)">
+          <div class="form-group">
+            <label for="restaurant">Restaurant</label>
+            <select ngModel name="restaurant" class="form-control" id="restaurant" required>
+              <option value="">-- Choisissez un restaurant --</option>
+              <option *ngFor="let restaurant of restaurants" [value]="restaurant">{{ restaurant.nom }}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="nbrAdultes">Nombre d'adultes</label>
+            <input type="number" ngModel name="nbrAdultes" class="form-control" id="nbrAdultes" placeholder="Nombre d'adultes" required>
+          </div>
+          <div class="form-group">
+            <label for="nbrEnfants">Nombre d'enfants</label>
+            <input type="number" ngModel name="nbrEnfants" class="form-control" id="nbrEnfants" placeholder="Nombre d'enfants" required>
+          </div>
+          <div class="form-group">
+            <label for="horaires">Horaire</label>
+            <select ngModel name="horaires" class="form-control" id="horaires" required>
+              <option value="">-- Choisissez un horaire --</option>
+              <option *ngFor="let horaire of horaires" [value]="horaire">{{horaire.horaire}}</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button [disabled]="addForm.invalid" class="btn btn-primary">Sauvegarder les changements</button>
+            <button type="button" id="add-reservation-form" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

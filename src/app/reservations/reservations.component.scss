@@ -8,3 +8,59 @@
   padding: 10px;
   margin-bottom: 2%;
   }
+
+  .imgUrl{
+    width: 100%;
+  }
+  
+  .search {
+  margin-right: 20%;
+  }
+  
+  .btn-add-restaurant {
+  margin-left: auto;
+  }
+  
+  .place-holder {
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 250px;
+  }
+  
+  .place-holder:focus {
+  outline: none;
+  border: 1px solid #333333;
+  }
+  
+  .btn-form-inline {
+  background-color: #CCCCCC;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+  
+  .btn-form-inline:hover {
+  background-color: #AAAAAA;
+  }
+  
+  .btn-search {
+  background-color: #FFFFFF;
+  color: #333333;
+  border: 2px solid #CCCCCC;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  }
+  
+  .btn-search:hover {
+  background-color: #F2F2F2;
+  border: 2px solid #AAAAAA;
+  }

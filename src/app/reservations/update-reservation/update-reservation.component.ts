@@ -38,10 +38,8 @@ export class UpdateReservationComponent implements OnInit {
         );
         this.reservationService.getHoraires().subscribe(
           (horaires) => {
-            console.log('Before OK');
             console.log(horaires);
             this.horaires = horaires;
-            console.log('After OK');
           }
         );
       });

@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-restaurants',
   templateUrl: './restaurants.component.html',
-  styleUrls: ['./restaurants.component.scss'] // Chemin du fichier CSS
+  styleUrls: ['./restaurants.component.scss'] 
 })
 
 export class RestaurantsComponent implements OnInit {
