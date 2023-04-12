@@ -13,7 +13,6 @@ const httpOptions = {
 })
 
 export class ReservationService {
-<<<<<<< HEAD
 apiURL: string = 'http://localhost:8081/reservation';
 reservations!: Reservation[];
 
@@ -49,34 +48,3 @@ updateReservation(res: Reservation): Observable<Reservation> {
   return this.http.put<Reservation>(url, res, httpOptions);
 }
 
-
-=======
-  apiURL: string = 'http://localhost:8080/theSpoon/reservations-api';
-  reservations!: Reservation[];
-
-  constructor(private http: HttpClient) {}
-
-  listeReservation(): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(this.apiURL);
-  }
-
-  ajouterReservation(res: Reservation): Observable<Reservation> {
-    return this.http.post<Reservation>(this.apiURL, res, httpOptions);
-  }
-
-  supprimerReservation(id: number) {
-    console.log("ok");
-    const url = `${this.apiURL}/${id}`;
-    return this.http.delete(url, httpOptions);
-  }
-
-  consulterReservation(id: number): Observable<Reservation> {
-    const url = `${this.apiURL}/${id}`;
-    return this.http.get<Reservation>(url);
-  }
-
-  updateReservation(res: Reservation): Observable<Reservation> {
-    return this.http.put<Reservation>(this.apiURL, res, httpOptions);
-  }
->>>>>>> 213b3bcf5cecb01c8272f25f9ce7c140767730ea
-}
