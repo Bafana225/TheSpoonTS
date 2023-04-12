@@ -17,28 +17,35 @@ export class UpdateReservationComponent implements OnInit {
   horaires: Horaires[] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
-              private router: Router,
-              private reservationService: ReservationService) { }
+    private router: Router,
+    private reservationService: ReservationService) { }
+    
 
   ngOnInit(): void {
-    this.reservationService.consulterReservation(this.activatedRoute.snapshot.params['id']).
-      subscribe(reservation => {
+    this.reservationService.consulterReservation(this.activatedRoute.snapshot.params['id'])
+      .subscribe(reservation => {
         this.currentReservation = reservation;
         // Récupération des restaurants et horaires pour les listes déroulantes
         this.reservationService.getRestaurants().subscribe(
-          (restaurants) => {
-            this.restaurants = restaurants;
+          (restaurants) => { this.restaurants = restaurants;
             // Trouver le restaurant associé à la réservation
-            this.currentReservation.restaurant = this.restaurants.find(r => r.id === this.currentReservation.restaurant.id);
+            const foundRestaurant = this.restaurants.find(r => r.id === this.currentReservation.restaurant?.id);
+            if (foundRestaurant) {
+              this.currentReservation.restaurant = foundRestaurant;
+            }
+
           }
         );
         this.reservationService.getHoraires().subscribe(
-          (horaires) => this.horaires = horaires
+          (horaires) => {
+            console.log('Before OK');
+            console.log(horaires);
+            this.horaires = horaires;
+            console.log('After OK');
+          }
         );
       });
   }
-
-
 
   updateReservation() {
     this.reservationService.updateReservation(this.currentReservation).subscribe(reservation => {
