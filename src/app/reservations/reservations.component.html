@@ -1,1 +1,33 @@
-<p>reservations works!</p>
+<!-- NAVIGATION CONTEXTUELLE RESERVATION -->
+<nav class="nav-reservation">
+  <form class="search">
+    <input class="place-holder" type="search" placeholder="Recherche par nom" aria-label="Rechercher">
+    <button class="btn-form-inline" type="submit">Rechercher</button>
+  </form>
+  <ul class="navbar-nav">
+    <li class="btn-add-reservation">
+      <!--<button class="btn-search" (click)="onOpenModal({id: 1, nbAdultes: 0, nbEnfants: 0, restaurant: null, horaires: null}, 'add')">Ajouter une réservation <span class="sr-only">(current)</span></button>-->
+    </li>
+  </ul>
+</nav>
+<!-- MAIN - LISTE DES RESERVATIONS -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let reservation of reservations">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{reservation.restaurant.nom}}</h5>
+          <p class="card-text"><i class="bi bi-geo-alt-fill"></i> {{reservation.restaurant.adresse}}</p>
+          <p class="card-text"><i class="bi bi-person-fill"></i> {{reservation.nbAdultes}} adulte(s) et {{reservation.nbEnfants}} enfant(s)</p>
+          <p class="card-text"><i class="bi bi-clock-fill"></i> {{reservation.heureReservation.horaire}}</p>
+          <div class="d-flex justify-content-center">
+            <a href="#" class="btn btn-danger mx-2" (click)="deleteReservation(reservation)">
+              <i class="bi bi-trash-fill"></i>
+            </a>
+            <a [routerLink]="['/update-reservation', reservation.id]" class="btn btn-success mx-2"><i class="bi bi-pencil-fill"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container my-4">
+  <h2>Ajouter une réservation</h2>
+  <form (ngSubmit)="addReservation()">
+    <div class="form-group">
+      <label>Nombre d'adultes</label>
+      <input type="number" class="form-control" name="nbAdultes" [(ngModel)]="newReservation.nbAdultes" required>
+    </div>
+    <div class="form-group">
+      <label>Nombre d'enfants</label>
+      <input type="number" class="form-control" name="nbEnfants" [(ngModel)]="newReservation.nbEnfants" required>
+    </div>
+    <div class="form-group">
+      <label>Restaurant</label>
+      <select class="form-control" name="restaurant" [(ngModel)]="newReservation.restaurant" required>
+        <option *ngFor="let restaurant of restaurants" [value]="restaurant">{{ restaurant.nom }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Horaires</label>
+      <input type="text" class="form-control" name="horaires" [(ngModel)]="newReservation.heureReservation" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+</div>
+

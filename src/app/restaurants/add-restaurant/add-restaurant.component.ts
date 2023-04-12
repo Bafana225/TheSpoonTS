@@ -21,7 +21,7 @@ export class AddRestaurantComponent implements OnInit {
     this.restaurantService.ajouterRestaurant(this.newRestaurant)
     .subscribe(res => {
       console.log(res);
-      this.router.navigate(['restaurants']); // Rediriger vers la liste des restaurants
+      this.router.navigate(['/restaurants']); // Rediriger vers la liste des restaurants
     });
   }
 

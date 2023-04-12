@@ -25,7 +25,7 @@ export class UpdateRestaurantComponent implements OnInit {
 
   updateRestaurant() {
     this.restaurantService.updateRestaurant(this.currentRestaurant).subscribe(resto => {
-      this.router.navigate(['restaurants']);
+      this.router.navigate(['/restaurants']);
     });
   }
 

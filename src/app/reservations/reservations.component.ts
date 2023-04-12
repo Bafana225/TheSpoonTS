@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Reservation } from '../models/reservation.model';
 import { Router } from '@angular/router';
 import { ReservationService } from '../services/reservation.service';
+import { RestaurantService } from '../services/restaurant.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 
@@ -15,15 +16,17 @@ export class ReservationsComponent implements OnInit {
 reservations?: Reservation[];
 
 constructor(
-private reservationService: ReservationService,
-private router: Router
+  private reservationService: ReservationService,
+  private restaurantService: RestaurantService,
+  private router: Router
 ) {}
 
 ngOnInit(): void {
 this.loadReservations();
 }
+///
 
-onOpenModal(reservation: Reservation = {id: 1, nbAdultes: 0, nbEnfants: 0, restaurant: {id: 0, nom: '', imageUrl: '', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, horaires: {id: 0, date: '', heure: ''}} , mode: string): void {
+onOpenModal(reservation: Reservation = {id: 1, nbAdultes: 0, nbEnfants: 0, restaurant: {id: 0, nom: '', adresse: '', nbrPlaces: 0, accessibilitePmr: false, prixMoyen: 0}, heureReservation: {id: 0, horaire: '', reservations: []}} , mode: string): void {
   const button = document.createElement('button');
   button.type = 'button';
   button.style.display = 'none';
@@ -35,6 +38,8 @@ onOpenModal(reservation: Reservation = {id: 1, nbAdultes: 0, nbEnfants: 0, resta
   button.click();
 }
 
+
+///
 
 public loadReservations(): void {
 this.reservationService.listeReservation().subscribe(reservations => {

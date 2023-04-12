@@ -23,7 +23,7 @@ export class RestaurantsComponent implements OnInit {
     this.chargerRestaurants();
   }
 
-  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', imageUrl:'', adresse: '', nbCouverts: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
+  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbrPlaces: 0, accessibilitePmr: false, prixMoyen: 0}, mode: string): void {
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';

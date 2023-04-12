@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { UpdateRestaurantComponent } from './restaurants/update-restaurant/update-restaurant.component';
 import { HomeComponent } from './home/home.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { AddReservationComponent } from './reservations/add-reservation/add-reservation.component';
+import { UpdateReservationComponent } from './reservations/update-reservation/update-reservation.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ReservationsComponent } from './reservations/reservations.component';
     AddRestaurantComponent,
     UpdateRestaurantComponent,
     HomeComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    AddReservationComponent,
+    UpdateReservationComponent
   ],
   imports: [
     BrowserModule,
