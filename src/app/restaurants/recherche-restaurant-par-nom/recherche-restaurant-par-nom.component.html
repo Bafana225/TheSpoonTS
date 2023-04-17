@@ -1,1 +1,34 @@
-<p>recherche-restaurant-par-nom works!</p>
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mx-sm-3 mb-2 mt-2">
+            <label style="margin-right: 10px;">Nom restaurant en tapant</label>
+            <input #nom [(ngModel)]="searchTerm" name="nom" class="form-control">
+          </div>          
+    </form>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Nombre de places</th>
+                        <th>Accessibilité PMR</th>
+                        <th>Prix Moyen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let restaurant of restaurants | filter:searchTerm">
+                        <td>{{ restaurant.id }}</td>
+                        <td>{{ restaurant.nom }}</td>
+                        <td>{{ restaurant.adresse }}</td>
+                        <td>{{ restaurant.nbrPlaces }}</td>
+                        <td>{{ restaurant.pmr }}</td>
+                        <td>{{ restaurant.prixMoyen }}</td>
+                    </tr>                      
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

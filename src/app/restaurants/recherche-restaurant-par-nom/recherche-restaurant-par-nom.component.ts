@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Restaurant } from '../../models/restaurant.model';
 import { RestaurantService } from '../../services/restaurant.service';
+
 @Component({
   selector: 'app-recherche-restaurant-par-nom',
   templateUrl: './recherche-restaurant-par-nom.component.html',
   styleUrls: ['./recherche-restaurant-par-nom.component.scss']
 })
+
+
 export class RechercheRestaurantParNomComponent implements OnInit {
 
   nomRestaurant!: string;

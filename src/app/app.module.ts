@@ -14,6 +14,7 @@ import { AddReservationComponent } from './reservations/add-reservation/add-rese
 import { UpdateReservationComponent } from './reservations/update-reservation/update-reservation.component';
 import { RechercheRestaurantParNomComponent } from './restaurants/recherche-restaurant-par-nom/recherche-restaurant-par-nom.component';
 import { SearchFilterPipe } from './search-filter.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { SearchFilterPipe } from './search-filter.pipe';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

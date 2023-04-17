@@ -4,6 +4,6 @@ export class Restaurant {
   nom!: string;
   adresse!: string;
   nbrPlaces!: number;
-  accessibilitePmr!: boolean;
+  pmr!: boolean;
   prixMoyen!: number;
 }
