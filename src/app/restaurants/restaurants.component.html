@@ -6,9 +6,10 @@
   </form>
   <ul class="navbar-nav">
     <li class="btn-add-restaurant">
-      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
+      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0, reservations: []}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
     </li>
   </ul>
+  
 </nav>
 <!-- MAIN - LISTE DES RESTAURANTS -->
 <div class="container">

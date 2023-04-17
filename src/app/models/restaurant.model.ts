@@ -7,5 +7,5 @@ export class Restaurant {
   nbrPlaces!: number;
   pmr!: boolean;
   prixMoyen!: number;
-  reservations!: Reservation[];
+  reservations?: Reservation[];
 }

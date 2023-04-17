@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RestaurantService } from '../services/restaurant.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
+import { Reservation } from '../models/reservation.model';
 
 @Component({
   selector: 'app-restaurants',
@@ -23,7 +24,7 @@ export class RestaurantsComponent implements OnInit {
     this.chargerRestaurants();
   }
 
-  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0}, mode: string): void {
+  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0, reservations: []}, mode: string): void {
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
