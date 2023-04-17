@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'update-restaurant/:id', component: UpdateRestaurantComponent },
   { path: 'update-reservation/:id', component: UpdateReservationComponent },
   {path: "rechercheRestaurantParNom", component : RechercheRestaurantParNomComponent},
-  { path: 'restaurants/:id', component: FicheRestaurantComponent },
+  { path: 'fiche-restaurant/:id', component: FicheRestaurantComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Restaurant } from '../../models/restaurant.model';
 import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
@@ -8,14 +9,18 @@ import { RestaurantService } from '../../services/restaurant.service';
   styleUrls: []
 })
 export class FicheRestaurantComponent implements OnInit {
-  restaurant: any;
 
-  constructor(private route: ActivatedRoute, private restaurantService: RestaurantService) { }
+  currentRestaurant!: Restaurant;
+
+  constructor(private route: ActivatedRoute, 
+              private restaurantService: RestaurantService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
       const restaurantId = params['id'];
-      this.restaurant = this.restaurantService.consulterRestaurant(restaurantId);
+      this.restaurantService.consulterRestaurant(restaurantId).subscribe(resto => {
+        this.currentRestaurant = resto;
+      });
     });
   }
 }
