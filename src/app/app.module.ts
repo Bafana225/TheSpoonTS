@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { AddReservationComponent } from './reservations/add-reservation/add-reservation.component';
 import { UpdateReservationComponent } from './reservations/update-reservation/update-reservation.component';
+import { RechercheRestaurantParNomComponent } from './restaurants/recherche-restaurant-par-nom/recherche-restaurant-par-nom.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { UpdateReservationComponent } from './reservations/update-reservation/up
     HomeComponent,
     ReservationsComponent,
     AddReservationComponent,
-    UpdateReservationComponent
+    UpdateReservationComponent,
+    RechercheRestaurantParNomComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

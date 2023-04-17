@@ -43,5 +43,11 @@ export class RestaurantService {
     const url = `${this.apiURL}/update`;
     return this.http.put<Restaurant>(url, res, httpOptions);
   }
+  // Recherche de restaurant par nom
+
+  rechercheRestaurantParNom(nom: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:8081/restaurant/find-by-nom/${nom}`);
+  }
+  
 
 }
