@@ -1,3 +1,4 @@
+import { Reservation } from './reservation.model';
 
 export class Restaurant {
   id!: number;
@@ -6,4 +7,5 @@ export class Restaurant {
   nbrPlaces!: number;
   pmr!: boolean;
   prixMoyen!: number;
+  reservations!: Reservation[];
 }
