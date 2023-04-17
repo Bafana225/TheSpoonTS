@@ -15,6 +15,7 @@ import { UpdateReservationComponent } from './reservations/update-reservation/up
 import { RechercheRestaurantParNomComponent } from './restaurants/recherche-restaurant-par-nom/recherche-restaurant-par-nom.component';
 import { SearchFilterPipe } from './search-filter.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FicheRestaurantComponent } from './restaurants/fiche-restaurant/fiche-restaurant.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AddReservationComponent,
     UpdateReservationComponent,
     RechercheRestaurantParNomComponent,
-    SearchFilterPipe
+    SearchFilterPipe,
+    FicheRestaurantComponent
   ],
   imports: [
     BrowserModule,
