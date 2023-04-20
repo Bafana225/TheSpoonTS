@@ -17,23 +17,23 @@ const httpOptions = {
 })
 
 export class RestaurantService {
-    apiURL: string = 'http://localhost:8080/restaurant';
+    apiURL: string = 'http://localhost:8080/theSpoon/restaurants-api';
     restaurants!: Restaurant[];
     reservations!: Reservation[];
 
   constructor(private http : HttpClient) { }
 
   listeRestaurant(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(this.apiURL + '/all');
+    return this.http.get<Restaurant[]>(this.apiURL + '/lister');
   }
 
   ajouterRestaurant(res: Restaurant): Observable<Restaurant> {
-    const url = `${this.apiURL}/add`;
+    const url = `${this.apiURL}/ajouter`;
     return this.http.post<Restaurant>(url, res, httpOptions);
   }
 
   supprimerRestaurant(id: number) {
-    const url = `${this.apiURL}/delete/${id}`;
+    const url = `${this.apiURL}/supprimer/${id}`;
     return this.http.delete(url, httpOptions);
   }
 
