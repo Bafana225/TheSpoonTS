@@ -17,7 +17,7 @@ const httpOptions = {
 })
 
 export class RestaurantService {
-    apiURL: string = 'http://localhost:8081/restaurant';
+    apiURL: string = 'http://localhost:8080/restaurant';
     restaurants!: Restaurant[];
     reservations!: Reservation[];
 

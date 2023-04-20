@@ -6,10 +6,13 @@
   </form>
   <ul class="navbar-nav">
     <li class="btn-add-reservation">
-      <button class="btn-search" (click)="onOpenModal({id: 0, nbrAdultes: 1, nbrEnfants: 0, restaurant: {id: 0, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0}, heureReservation: {id: 0, horaire: '', reservations: []}}, 'add')">Ajouter une réservation <span class="sr-only">(current)</span></button>
+      <button class="btn-search" (click)="onOpenModal({id: 0, nbrAdulte: 1, nbrEnfant: 0, horaires:{id: 0, horaire: ''}, restaurant: {id: 0, nom: '', adresse: '', nbrPlace: 0, pmr: false, prix: 0, reservations: [], horaires: []}}, 'add')
+      ">Ajouter une réservation <span class="sr-only">(current)</span></button>
     </li>
   </ul>
 </nav>
+
+
 <!-- MAIN - LISTE DES RESERVATIONS -->
 <div class="container">
   <div class="row">
@@ -18,8 +21,8 @@
         <div class="card-body">
           <h5 class="card-title">{{reservation.restaurant.nom}}</h5>
           <p class="card-text"><i class="bi bi-geo-alt-fill"></i> {{reservation.restaurant.adresse}}</p>
-          <p class="card-text"><i class="bi bi-person-fill"></i> {{reservation.nbrAdultes}} adulte(s) et {{reservation.nbrEnfants}} enfant(s)</p>
-          <p class="card-text"><i class="bi bi-clock-fill"></i> {{reservation.heureReservation.horaire}}</p>
+          <p class="card-text"><i class="bi bi-person-fill"></i> {{reservation.nbrAdulte}} adulte(s) et {{reservation.nbrEnfant}} enfant(s)</p>
+          <p class="card-text"><i class="bi bi-clock-fill"></i> {{reservation.horaires.horaire}}</p>
           <div class="d-flex justify-content-center">
             <a href="#" class="btn btn-danger mx-2" (click)="deleteReservation(reservation)">
               <i class="bi bi-trash-fill"></i>
@@ -31,6 +34,7 @@
     </div>
   </div>
 </div>
+
 <!-- MODAL D'AJOUT DE RESERVATION -->
 <div class="modal fade" id="addReservationModal" tabindex="-1" role="dialog" aria-labelledby="addReservationModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

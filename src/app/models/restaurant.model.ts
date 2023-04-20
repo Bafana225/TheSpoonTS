@@ -1,11 +1,13 @@
 import { Reservation } from './reservation.model';
+import { Horaires } from './horaire.model';
 
 export class Restaurant {
   id!: number;
   nom!: string;
   adresse!: string;
-  nbrPlaces!: number;
+  nbrPlace!: number;
   pmr!: boolean;
-  prixMoyen!: number;
+  prix!: number;
   reservations?: Reservation[];
+  horaires!: Horaires[];
 }

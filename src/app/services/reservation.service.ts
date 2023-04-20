@@ -15,28 +15,28 @@ const httpOptions = {
 })
 
 export class ReservationService {
-baseURLReservation: string = 'http://localhost:8081/reservation';
-baseURLHoraires : string = 'http://localhost:8081/horaires';
-baseURLRestauration: string = 'http://localhost:8081/restaurant';
+baseURLReservation: string = 'http://localhost:8080/theSpoon/api-reservation';
+baseURLHoraires : string = 'http://localhost:8080/theSpoon/horaires';
+baseURLRestauration: string = 'http://localhost:8080/theSpoon/restaurants-api';
 reservations!: Reservation[];
 
 constructor(private http: HttpClient) { }
 
 // Liste toutes les réservations
 listeReservation(): Observable<Reservation[]> {
-  const url = `${this.baseURLReservation}/all`;
+  const url = `${this.baseURLReservation}/lister`;
   return this.http.get<Reservation[]>(url);
 }
 
 // Ajoute une nouvelle réservation
 ajouterReservation(res: Reservation): Observable<Reservation> {
-  const url = `${this.baseURLReservation}/add`;
+  const url = `${this.baseURLReservation}/ajouter`;
   return this.http.post<Reservation>(url, res, httpOptions);
 }
 
 // Supprime une réservation existante
 supprimerReservation(id: number) {
-  const url = `${this.baseURLReservation}/delete/${id}`;
+  const url = `${this.baseURLReservation}/supprimer/${id}`;
   return this.http.delete(url, httpOptions);
 }
 
@@ -48,7 +48,7 @@ consulterReservation(id: number): Observable<Reservation> {
 
 // Met à jour une réservation existante
 updateReservation(res: Reservation): Observable<Reservation> {
-  const url = `${this.baseURLReservation}/updateDTO`;
+  const url = `${this.baseURLReservation}/editer`;
   return this.http.put<Reservation>(url, res, httpOptions);
 }
 

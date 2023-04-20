@@ -4,8 +4,8 @@ import { Restaurant } from './restaurant.model';
 
 export class Reservation {
   id!: number;
-  nbrAdultes!: number;
-  nbrEnfants!: number;
-  heureReservation!: Horaires;
+  nbrAdulte!: number;
+  nbrEnfant!: number;
+  horaires!: Horaires;
   restaurant!: Restaurant;
 }

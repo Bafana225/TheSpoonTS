@@ -6,11 +6,12 @@
   </form>
   <ul class="navbar-nav">
     <li class="btn-add-restaurant">
-      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0, reservations: []}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
+      <button class="btn-search" (click)="onOpenModal({id: 1, nom: '', adresse: '', nbrPlace: 0, pmr: false, prix: 0, reservations: [], horaires: []}, 'add')">Ajouter un restaurant <span class="sr-only">(current)</span></button>
     </li>
   </ul>
   
 </nav>
+
 <!-- MAIN - LISTE DES RESTAURANTS -->
 <div class="container">
   <div class="row">
@@ -20,9 +21,9 @@
         <div class="card-body">
           <h5 class="card-title">{{restaurant.nom}}</h5>
           <p class="card-text"><i class="bi bi-geo-alt-fill"></i> {{restaurant.adresse}}</p>
-          <p class="card-text"><i class="bi bi-person-fill"></i> {{restaurant.nbrPlaces}} couverts</p>
+          <p class="card-text"><i class="bi bi-person-fill"></i> {{restaurant.nbrPlace}} couverts</p>
           <p class="card-text"><i class="bi bi-wheelchair"></i> {{restaurant.pmr ? 'Accessible PMR' : 'Non accessible PMR'}}</p>
-          <p class="card-text"><i class="bi bi-currency-euro"></i> Prix moyen : {{restaurant.prixMoyen}}€</p>
+          <p class="card-text"><i class="bi bi-currency-euro"></i> Prix moyen : {{restaurant.prix}}€</p>
           <div class="d-flex justify-content-center">
             <a href="#" class="btn btn-danger mx-2" (click)="supprimerRestaurant(restaurant)">
               <i class="bi bi-trash-fill"></i>

@@ -39,7 +39,7 @@ export class ReservationsComponent implements OnInit {
   }
   ///
 
-  onOpenModal(reservation: Reservation = { id: 1, nbrAdultes: 0, nbrEnfants: 0, restaurant: { id: 0, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0 }, heureReservation: { id: 0, horaire: '', reservations: [] } }, mode: string): void {
+  onOpenModal(reservation: Reservation = { id: 0, nbrAdulte: 0, nbrEnfant: 0, restaurant: { id: 0, nom: '', adresse: '', nbrPlace: 0, pmr: false, prix: 0, reservations: [], horaires: [] }, horaires: { id: 0, horaire: '' } }, mode: string): void { 
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
@@ -49,7 +49,8 @@ export class ReservationsComponent implements OnInit {
     }
     document.body.appendChild(button);
     button.click();
-  }
+}
+
 
 
   /// LOADS

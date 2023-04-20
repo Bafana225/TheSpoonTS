@@ -3,16 +3,16 @@
 <div>
   <h3>Informations sur le restaurant :</h3>
   <p>Adresse : {{ currentRestaurant.adresse }}</p>
-  <p>Nombre de places : {{ currentRestaurant.nbrPlaces }}</p>
+  <p>Nombre de places : {{ currentRestaurant.nbrPlace }}</p>
   <p>Accessible PMR : {{ currentRestaurant.pmr ? 'Oui' : 'Non' }}</p>
-  <p>Prix moyen : {{ currentRestaurant.prixMoyen }}€</p>
+  <p>Prix moyen : {{ currentRestaurant.prix }}€</p>
 </div>
 
 <div>
   <h3>Liste des réservations :</h3>
   <ul>
     <li *ngFor="let reservation of currentRestaurant.reservations">
-      {{ reservation.nbrAdultes }} Adultes - {{ reservation.nbrEnfants }} enfants - {{ reservation.heureReservation }}
+      {{ reservation.nbrAdulte }} Adultes - {{ reservation.nbrEnfant }} enfants - {{ reservation.horaires }}
     </li>
   </ul>
 </div>

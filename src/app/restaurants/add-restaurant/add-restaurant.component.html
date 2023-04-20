@@ -15,7 +15,7 @@
       </div>
       <div class="form-group">
         <label>Nombre de couverts</label>
-        <input type="number" class="form-control" name="nbCouverts" [(ngModel)]="newRestaurant.nbrPlaces" required>
+        <input type="number" class="form-control" name="nbCouverts" [(ngModel)]="newRestaurant.nbrPlace" required>
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" name="accessibilitePmr" [(ngModel)]="newRestaurant.pmr">
@@ -23,7 +23,7 @@
       </div>
       <div class="form-group">
         <label>Prix moyen (en euros)</label>
-        <input type="number" class="form-control" name="prixMoyen" [(ngModel)]="newRestaurant.prixMoyen" required>
+        <input type="number" class="form-control" name="prixMoyen" [(ngModel)]="newRestaurant.prix" required>
       </div>
       <button type="submit" class="btn btn-primary">Ajouter</button>
     </form>

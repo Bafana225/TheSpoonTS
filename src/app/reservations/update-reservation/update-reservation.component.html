@@ -1,17 +1,17 @@
 <form class="mx-auto" style="width: 80%; margin-top: 3%; margin-bottom: 6%;">
   <div class="form-group">
     <label for="nbrAdultes">Nombre d'adultes :</label>
-    <input type="number" class="form-control" id="nbrAdultes" [(ngModel)]="currentReservation.nbrAdultes"
+    <input type="number" class="form-control" id="nbrAdultes" [(ngModel)]="currentReservation.nbrAdulte"
       name="nbrAdultes">
   </div>
   <div class="form-group">
     <label for="nbrEnfants">Nombre d'enfants :</label>
-    <input type="number" class="form-control" id="nbrEnfants" [(ngModel)]="currentReservation.nbrEnfants"
+    <input type="number" class="form-control" id="nbrEnfants" [(ngModel)]="currentReservation.nbrEnfant"
       name="nbrEnfants">
   </div>
   <div class="form-group">
     <label for="heureReservation">Heure de réservation :</label>
-    <select class="form-control" id="heureReservation" [(ngModel)]="currentReservation.heureReservation"
+    <select class="form-control" id="heureReservation" [(ngModel)]="currentReservation.horaires"
   name="heureReservation">
   <option *ngFor="let horaire of horaires" [value]="horaire">{{horaire.horaire}}</option>
 </select>

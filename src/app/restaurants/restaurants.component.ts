@@ -24,7 +24,7 @@ export class RestaurantsComponent implements OnInit {
     this.chargerRestaurants();
   }
 
-  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbrPlaces: 0, pmr: false, prixMoyen: 0, reservations: []}, mode: string): void {
+  onOpenModal(restaurant: Restaurant = {id: 1, nom: '', adresse: '', nbrPlace: 0, pmr: false, prix: 0, reservations: [], horaires: []}, mode: string): void {
     const button = document.createElement('button');
     button.type = 'button';
     button.style.display = 'none';
@@ -34,7 +34,8 @@ export class RestaurantsComponent implements OnInit {
     }
     document.body.appendChild(button);
     button.click();
-  }
+}
+
 
   public chargerRestaurants(): void {
     this.restaurantService.listeRestaurant().subscribe(restaurants => {

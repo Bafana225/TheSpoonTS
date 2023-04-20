@@ -3,11 +3,11 @@
   <form (ngSubmit)="addReservation()">
     <div class="form-group">
       <label>Nombre d'adultes</label>
-      <input type="number" class="form-control" name="nbAdultes" [(ngModel)]="newReservation.nbrAdultes" required>
+      <input type="number" class="form-control" name="nbAdultes" [(ngModel)]="newReservation.nbrAdulte" required>
     </div>
     <div class="form-group">
       <label>Nombre d'enfants</label>
-      <input type="number" class="form-control" name="nbEnfants" [(ngModel)]="newReservation.nbrEnfants" required>
+      <input type="number" class="form-control" name="nbEnfants" [(ngModel)]="newReservation.nbrEnfant" required>
     </div>
     <div class="form-group">
       <label>Restaurant</label>
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group">
       <label>Horaires</label>
-      <input type="text" class="form-control" name="horaires" [(ngModel)]="newReservation.heureReservation" required>
+      <input type="text" class="form-control" name="horaires" [(ngModel)]="newReservation.horaires" required>
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
   </form>
