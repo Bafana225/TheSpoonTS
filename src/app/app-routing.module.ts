@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ReservationsComponent } from './reservations/reservations.component';
 import { RechercheRestaurantParNomComponent } from './restaurants/recherche-restaurant-par-nom/recherche-restaurant-par-nom.component';
 import { FicheRestaurantComponent } from './restaurants/fiche-restaurant/fiche-restaurant.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'update-reservation/:id', component: UpdateReservationComponent },
   {path: "rechercheRestaurantParNom", component : RechercheRestaurantParNomComponent},
   { path: 'fiche-restaurant/:id', component: FicheRestaurantComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

@@ -16,6 +16,7 @@ import { RechercheRestaurantParNomComponent } from './restaurants/recherche-rest
 import { SearchFilterPipe } from './search-filter.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FicheRestaurantComponent } from './restaurants/fiche-restaurant/fiche-restaurant.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { FicheRestaurantComponent } from './restaurants/fiche-restaurant/fiche-r
     UpdateReservationComponent,
     RechercheRestaurantParNomComponent,
     SearchFilterPipe,
-    FicheRestaurantComponent
+    FicheRestaurantComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
